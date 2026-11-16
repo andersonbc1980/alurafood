@@ -1,0 +1,15 @@
+services:
+  db.alurafood.pagamentos:
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: pagamentos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres.alurafood.pagamentos:/var/lib/postgresql
+
+volumes:
+  postgres.alurafood.pagamentos:

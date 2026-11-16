@@ -1,0 +1,15 @@
+services:
+  db.alurafood.pedidos:
+    image: postgres:18
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha123
+      POSTGRES_DB: pedidos
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres.alurafood.pedidos:/var/lib/postgresql
+
+volumes:
+  postgres.alurafood.pedidos:
